@@ -1,0 +1,81 @@
+#inicio {
+  border: 0px;
+  margin: 0px;
+  display: inline-block;
+  width: 50%;
+  height: 100vh;
+  background: #D9D9D9;
+}
+
+#fim {
+  border: 0px;
+  margin: 0px;
+  display: inline-block;
+  width: 50%;
+  height: 100vh;
+}
+
+#container {
+  display: flex;
+  align-items: center;
+}
+
+#texto1 {
+  width: 286px;
+  color: #000;
+  text-align: center;
+  font-family: Rubik;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+#textoTitulo {
+  color: #000;
+  font-family: Poppins;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.6px;
+}
+
+#textoWelcome {
+  width: 287px;
+  color: #000;
+  font-family: Rubik;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: left;
+}
+
+#textoDescricao{
+  width: 288px;
+  color: #000;
+font-family: Rubik;
+font-size: 17px;
+font-style: normal;
+font-weight: 600;
+line-height: 28px;
+text-align: left;
+}
+
+#keepConnected{
+  display: flex;
+width: 20px;
+height: 20px;
+padding: 1.667px;
+justify-content: center;
+align-items: center;
+flex-shrink: 0;
+font-size: 10px;
+}
+
+      
+
+
+
+
