@@ -13,11 +13,14 @@ const Login = () => {
     <div className="limiter">
       <div id="container">
         <div id="inicio">
-          <img src={imagem} alt=""></img>
           <p id="texto1">Fortalecendo laços, cultivando talentos, crescendo juntos!</p>
         </div>
 
         <div id="fim">
+          <div className="logoTitulo">
+          <img id="logo" src={imagem} alt=""></img>
+          <h4 id="logoTitulo" >Sementes</h4>
+          </div>
           <div className="container-login100">
             <div className="wrap-login100">
               <form className="login100-form validate-form">
@@ -38,7 +41,7 @@ const Login = () => {
 
                 <div className="wrap-input100 validate-input" data-validate="Enter password">
                   <span className="btn-show-pass">
-                    <i className="zmdi zmdi-eye"></i>
+                    Mostrar
                   </span>
                   <label className="senhaEmail" htmlFor="">Senha</label>
                   <input className="input100" type="password" name="pass" value={password}
@@ -78,13 +81,6 @@ const Login = () => {
                   </div>
                 </div>
 
-
-
-                <div className="text-center p-t-20">
-                  <a className="txt2" href="#">
-                    Esqueceu sua Senha ?
-                  </a>
-                </div>
               </form>
             </div>
           </div>
