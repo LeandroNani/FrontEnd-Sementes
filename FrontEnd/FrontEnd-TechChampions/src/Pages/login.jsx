@@ -12,6 +12,11 @@ const Login = () => {
   const [newPassword, setnewPassword] = useState('');
   const [keepConnected, setKeepConnected] = useState(false);
   const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
   function abrirModal() {
     setIsOpen(true);
   }
@@ -50,11 +55,11 @@ const Login = () => {
                 </div>
 
                 <div className="wrap-input100 validate-input" data-validate="Enter password">
-                  <span className="btn-show-pass">
-                    Mostrar
+                  <span className="btn-show-pass" onClick={handleShowPassword}>
+                    {showPassword ? "Esconder" : "Mostrar"}
                   </span>
                   <label className="senhaEmail" htmlFor="">Senha</label>
-                  <input className="input100" type="password" name="pass" value={password}
+                  <input className="input100" type={showPassword ? "text" : "password"} name="pass" value={password}
                     onChange={(e) => setPassword(e.target.value)} />
                   <span className="focus-input100" data-placeholder="Password"></span>
                 </div>
@@ -113,16 +118,16 @@ const Login = () => {
         </div>
 
         <div className="wrap-input100 validate-input" data-validate="Enter password">
-          <span className="btn-show-pass">
-            Mostrar
+          <span className="btn-show-pass" onClick={handleShowPassword}>
+            {showPassword ? "Esconder" : "Mostrar"}
           </span>
           <label className="senhaEmail" htmlFor="">Crie sua Senha</label>
-          <input placeholder='Insira sua Senha' className="input100" type="password" name="pass" value={newPassword}
+          <input placeholder='Insira sua Senha' className="input100" type={showPassword ? "text" : "password"} name="pass" value={newPassword}
             onChange={(e) => setnewPassword(e.target.value)} />
           <span className="focus-input100" data-placeholder="Password"></span>
         </div>
 
-        <hr id="linha"/>
+        <hr id="linha" />
 
         <div className="container-login100-form-btn">
           <div className="wrap-login100-form-btn">
