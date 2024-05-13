@@ -1,13 +1,23 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import '../Utils/css/util.css';
 import '../Utils/css/main.css';
 import '../Utils/css/login.css';
 import imagem from "./react.svg";
+import Modal from 'react-modal';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [newEmail, setnewEmail] = useState('');
+  const [newPassword, setnewPassword] = useState('');
   const [keepConnected, setKeepConnected] = useState(false);
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+  function abrirModal() {
+    setIsOpen(true);
+  }
+  function fecharModal() {
+    setIsOpen(false);
+  }
 
   return (
     <div className="limiter">
@@ -18,8 +28,8 @@ const Login = () => {
 
         <div id="fim">
           <div className="logoTitulo">
-          <img id="logo" src={imagem} alt=""></img>
-          <h4 id="logoTitulo" >Sementes</h4>
+            <img id="logo" src={imagem} alt=""></img>
+            <h4 id="logoTitulo" >Sementes</h4>
           </div>
           <div className="container-login100">
             <div className="wrap-login100">
@@ -75,7 +85,7 @@ const Login = () => {
                 <div className="container-login100-form-btn">
                   <div className="wrap-login100-form-btn">
                     <div className="cadastro-bgbtn"></div>
-                    <button className="cadastro-btn">
+                    <button type='button' onClick={abrirModal} className="cadastro-btn">
                       Cadastrar Conta
                     </button>
                   </div>
@@ -86,6 +96,43 @@ const Login = () => {
           </div>
         </div>
       </div>
+
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={fecharModal}
+        contentLabel="Modal de exemplo"
+        className="modal-content login100-form validate-form"
+        overlayClassName="modal-overlay"
+      >
+        <div className="wrap-input100 validate-input" data-validate="Valid email is: a@b.c">
+          <label className="senhaEmail" htmlFor="">Cadastre seu E-mail</label>
+          <input placeholder='Insira seu e-mail' className="input100" type="text" name="email"
+            value={newEmail}
+            onChange={(e) => setnewEmail(e.target.value)} />
+          <span className="focus-input100" data-placeholder="Email"></span>
+        </div>
+
+        <div className="wrap-input100 validate-input" data-validate="Enter password">
+          <span className="btn-show-pass">
+            Mostrar
+          </span>
+          <label className="senhaEmail" htmlFor="">Crie sua Senha</label>
+          <input placeholder='Insira sua Senha' className="input100" type="password" name="pass" value={newPassword}
+            onChange={(e) => setnewPassword(e.target.value)} />
+          <span className="focus-input100" data-placeholder="Password"></span>
+        </div>
+
+        <hr id="linha"/>
+
+        <div className="container-login100-form-btn">
+          <div className="wrap-login100-form-btn">
+            <div className="login100-form-bgbtn"></div>
+            <button className="login100-form-btn">
+              Criar Conta
+            </button>
+          </div>
+        </div>
+      </Modal>
     </div>
   );
 };
