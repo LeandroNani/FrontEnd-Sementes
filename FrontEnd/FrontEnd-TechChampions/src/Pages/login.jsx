@@ -4,6 +4,7 @@ import '../Utils/css/main.css';
 import '../Utils/css/login.css';
 import imagem from "./react.svg";
 import Modal from 'react-modal';
+import axios from 'axios';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -13,6 +14,35 @@ const Login = () => {
   const [keepConnected, setKeepConnected] = useState(false);
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(false);
+
+  const handleLogin = async () => {
+    try {
+      const response = await axios.post('/api/login', { email, password });
+      if (response.data.success) {
+        setSuccess(true);
+      } else {
+        setError(response.data.error);
+      }
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+
+  const handleRegister = async () => {
+    try {
+      const response = await axios.post('/api/register', { newEmail, newPassword });
+      if (response.data.success) {
+        setSuccess(true);
+        setIsOpen(false);
+      } else {
+        setError(response.data.error);
+      }
+    } catch (error) {
+      setError(error.message);
+    }
+  };
 
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
@@ -81,10 +111,12 @@ const Login = () => {
                 <div className="container-login100-form-btn">
                   <div className="wrap-login100-form-btn">
                     <div className="login100-form-bgbtn"></div>
-                    <button className="login100-form-btn">
+                    <button type='button' className="login100-form-btn" onClick={handleLogin}>
                       Login
                     </button>
                   </div>
+                  {error && <div style={{ color: 'red' }}>{error}</div>}
+                    {success && <div style={{ color: 'green' }}>Login realizado com sucesso!</div>}
                 </div>
 
                 <div className="container-login100-form-btn">
@@ -132,10 +164,12 @@ const Login = () => {
         <div className="container-login100-form-btn">
           <div className="wrap-login100-form-btn">
             <div className="login100-form-bgbtn"></div>
-            <button className="login100-form-btn">
+            <button className="login100-form-btn" onClick={handleRegister}>
               Criar Conta
             </button>
           </div>
+          {error && <div style={{ color: 'red' }}>{error}</div>}
+                    {success && <div style={{ color: 'green' }}>cadastro realizado com sucesso!</div>}
         </div>
       </Modal>
     </div>
