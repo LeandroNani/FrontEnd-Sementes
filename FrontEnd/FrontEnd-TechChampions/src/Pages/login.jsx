@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../Utils/css/util.css';
 import '../Utils/css/main.css';
 import '../Utils/css/login.css';
-import imagem from "./react.svg";
+import imagem from "../Utils/img/react.svg";
 import Modal from 'react-modal';
 import axios from 'axios';
 
