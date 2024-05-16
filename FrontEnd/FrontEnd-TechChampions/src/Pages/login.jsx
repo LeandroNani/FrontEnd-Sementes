@@ -10,13 +10,14 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [newEmail, setnewEmail] = useState('');
+  const [newNome, setnewNome] = useState('');
+  const [newCargo, setnewCargo] = useState('');
   const [newPassword, setnewPassword] = useState('');
   const [keepConnected, setKeepConnected] = useState(false);
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
-
   const handleLogin = async () => {
     try {
       const response = await axios.post('/api/login', { email, password });
@@ -32,7 +33,7 @@ const Login = () => {
 
   const handleRegister = async () => {
     try {
-      const response = await axios.post('/api/register', { newEmail, newPassword });
+      const response = await axios.post('/api/register', { newNome,newCargo, newEmail, newPassword });
       if (response.data.success) {
         setSuccess(true);
         setIsOpen(false);
@@ -141,6 +142,20 @@ const Login = () => {
         className="modal-content login100-form validate-form"
         overlayClassName="modal-overlay"
       >
+        <div className="wrap-input100 validate-input">
+          <label className="senhaEmail" htmlFor="">Insira Seu Nome Completo</label>
+          <input placeholder='Nome Completo' className="input100" type="text" name="nome"
+            value={newNome}
+            onChange={(e) => setnewNome(e.target.value)} />
+          <span className="focus-input100"></span>
+        </div>
+        <div className="wrap-input100 validate-input">
+          <label className="senhaEmail" htmlFor="">Insira seu Cargo</label>
+          <input placeholder='Insira seu Cargo' className="input100" type="text" name="cargo"
+            value={newCargo}
+            onChange={(e) => setnewCargo(e.target.value)} />
+          <span className="focus-input100"></span>
+        </div>
         <div className="wrap-input100 validate-input" data-validate="Valid email is: a@b.c">
           <label className="senhaEmail" htmlFor="">Cadastre seu E-mail</label>
           <input placeholder='Insira seu e-mail' className="input100" type="text" name="email"
