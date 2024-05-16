@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../Utils/css/util.css';
 import '../Utils/css/main.css';
 import '../Utils/css/login.css';
@@ -7,6 +8,7 @@ import Modal from 'react-modal';
 import axios from 'axios';
 
 const Login = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [newEmail, setnewEmail] = useState('');
@@ -18,6 +20,8 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
+  const [user, setUser] = useState(null);
+  
   const handleLogin = async () => {
     try {
       const response = await axios.post('/api/login', { email, password });
@@ -44,6 +48,23 @@ const Login = () => {
       setError(error.message);
     }
   };
+
+  useEffect(() => {
+    if (success) {
+      axios.get('/api/user')
+        .then(response => {
+          if (response.data.success && response.data.user) {
+            setUser(response.data.user);
+            navigate('/profile');
+          } else {
+            setError(response.data.error);
+          }
+        })
+        .catch(error => {
+          setError(error.message);
+        });
+    }
+  }, [success, navigate]);
 
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
