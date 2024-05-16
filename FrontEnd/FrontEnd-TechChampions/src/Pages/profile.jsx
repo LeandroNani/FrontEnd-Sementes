@@ -43,6 +43,11 @@ const Profile = () => {
         <span>•</span>
         <span>Função</span>
         </div>
+        
+
+        <div id="infoProfile">
+
+        </div>
 
 
       </div>
