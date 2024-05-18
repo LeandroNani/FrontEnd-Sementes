@@ -68,11 +68,13 @@ const Profile = () => {
         
         <div id="ultimasAvaliacoes">
         <div id="avaliacoesTitulo">
+          <h2 id="avaliacoesRecebidas">AVALIAÇÕES RECEBIDAS</h2>
         </div>
         </div>
 
         <div id="carreiras">
-        <div id="carreirasTitulo">
+        <div id="carreirasTituloContainer">
+        <h2 id="carreirasTitle">CARREIRAS</h2>
         </div>
         </div>
 

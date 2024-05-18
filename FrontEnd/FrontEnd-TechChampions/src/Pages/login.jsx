@@ -3,9 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import '../Utils/css/util.css';
 import '../Utils/css/main.css';
 import '../Utils/css/login.css';
-import imagem from "../Utils/img/react.svg";
+import imagem from "../Utils/img/logoRoxo.png";
+import bordao from "../Utils/img/imagemBordao.png";
 import Modal from 'react-modal';
 import axios from 'axios';
+
 
 const Login = () => {
   const navigate = useNavigate();
@@ -86,13 +88,12 @@ const Login = () => {
     <div className="limiter">
       <div id="container">
         <div id="inicio">
-          <p id="texto1">Fortalecendo laços, cultivando talentos, crescendo juntos!</p>
+        <img id="bordao" src={bordao} alt=""></img>
         </div>
 
         <div id="fim">
           <div className="logoTitulo">
             <img id="logo" src={imagem} alt=""></img>
-            <h4 id="logoTitulo" >Sementes</h4>
           </div>
           <div className="container-login100">
             <div className="wrap-login100">
