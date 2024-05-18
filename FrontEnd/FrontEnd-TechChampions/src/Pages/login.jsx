@@ -24,11 +24,17 @@ const Login = () => {
   
   const handleLogin = async () => {
     try {
-      const response = await axios.post('/api/login', { email, password });
-      if (response.data.success) {
+      const response = await axios.get('https://projeto-sementes.onrender.com/usuarios');
+      const users = response.data;
+      const foundUser = users.find((user) => user.email === email && user.senha === password);
+      if (foundUser) {
         setSuccess(true);
+        setUser(foundUser);
+        localStorage.setItem('userId', foundUser.id);
+        navigate('/profile');
+        alert('Login feito com Sucesso!')
       } else {
-        setError(response.data.error);
+        setError('Email ou senha incorretos');
       }
     } catch (error) {
       setError(error.message);
@@ -37,7 +43,7 @@ const Login = () => {
 
   const handleRegister = async () => {
     try {
-      const response = await axios.post('/api/register', { newNome,newCargo, newEmail, newPassword });
+      const response = await axios.post('https://projeto-sementes.onrender.com/usuarios', { newNome, newCargo, newEmail, newPassword });
       if (response.data.success) {
         setSuccess(true);
         setIsOpen(false);
