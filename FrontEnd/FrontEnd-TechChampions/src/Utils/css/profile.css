@@ -9,6 +9,7 @@ body{
   background: #E6E6E6;
 backdrop-filter: blur(25px);
 margin: 0;
+overflow: hidden;
 }
 html{
   margin: 0;
@@ -171,10 +172,10 @@ line-height: 150%; /* 45px */
 }
 #infoProfile{
   margin: 0;
-  margin-left: 300px;
+  margin-left: 400px;
   display: flex;
-width: 499px;
-height: 250px;
+width: 399px;
+height: 200px;
 padding: 36px 60px;
 align-items: flex-start;
 gap: 45px;
@@ -225,4 +226,49 @@ font-size: 25px;
 font-style: normal;
 font-weight: 700;
 line-height: 150%; /* 37.5px */
+}
+#ultimasAvaliacoes{
+  position: absolute;
+  margin-top: 251px;
+  width: 719px;
+height: 400px;
+flex-shrink: 0;
+border-radius: 32px 32px 0px 0px;
+border-top: 3px solid #F47920;
+border-right:3px solid #F47920;
+background: #E6E6E6;
+}
+
+#carreiras{
+  position: absolute;
+  margin-top: 251px;
+  margin-left: 780px;
+  width: 719px;
+height: 400px;
+flex-shrink: 0;
+border-radius: 32px 0px 0px 0px;
+border: 3px solid #6D0467;
+background: #6D0467;
+}
+#avaliacoesTitulo{
+  display: absolute;
+  margin-left: 165px;
+  width: 400px;
+  height: 60px;
+  flex-shrink: 0;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+background: #F47920;
+}
+#carreirasTitulo{
+  display: absolute;
+  margin-left: 165px;
+  width: 400px;
+  height: 60px;
+  flex-shrink: 0;
+  
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  border: 3px solid #E6E6E6 ;
+  background: #6D0467;
 }
