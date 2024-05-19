@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import avatar from "../Utils/img/avatar.png";
 import ponto from "../Utils/img/ponto.png";
@@ -11,46 +11,27 @@ import Header from '../components/header';
 
 const Profile = () => {
   const navigate = useNavigate();
-  const [token, setToken] = useState(localStorage.getItem('token') || '');
-  const config = {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  };
-  const [userData, setUserData] = React.useState(null);
-  const [ultimaAvaliacao, setUltimaAvaliacao] = React.useState(null);
-  const [error, setError] = React.useState(null);
+  const email = localStorage.getItem('email');
+
+  const [userData, setUserData] = useState(null);
 
   useEffect(() => {
-    if (token) {
-      const fetchUserData = async () => {
+    if (email) {
+      const fetchUserDataByEmail = async () => {
         try {
-          const response = await axios.get(`https://projeto-sementes.onrender.com/usuarios`, config);
+          const response = await axios.get(`https://projeto-sementes.onrender.com/usuarios`);
           const users = response.data;
-          const user = users.find((user) => user.id === localStorage.getItem('userId'));
-          if (user) {
-            setUserData(user);
-          }
+          const user = users.find((user) => user.email === email);
+          console.log(user);
+          setUserData(user);
         } catch (error) {
-          setError(error.message);
+          console.error(error);
         }
       };
 
-      const fetchAvaliacoes = async () => {
-        try {
-          const response = await axios.get(`https://projeto-sementes.onrender.com/avaliacoes`, config);
-          const avaliacoes = response.data;
-          const ultimaAvaliacao = avaliacoes.find((avaliacao) => avaliacao.usuarioAvaliadoId === localStorage.getItem('userId'));
-          setUltimaAvaliacao(ultimaAvaliacao);
-        } catch (error) {
-          setError(error.message);
-        }
-      };
-
-      fetchUserData();
-      fetchAvaliacoes();
+      fetchUserDataByEmail();
     }
-  }, [token]);
+  }, [email]);
 
   return (
     <div id="limiter">
@@ -90,21 +71,7 @@ const Profile = () => {
           <div id="avaliacoesTitulo">
             <h2 id="avaliacoesRecebidas">AVALIAÇÕES RECEBIDAS</h2>
           </div>
-          {ultimaAvaliacao && (
-            <>
-              <h3>Última Avaliação Recebida</h3>
-              <p>Média dos atributos: {
-                ((ultimaAvaliacao.comunicacao +
-                  ultimaAvaliacao.proatividade +
-                  ultimaAvaliacao.inteligenciaEmocional +
-                  ultimaAvaliacao.flexibilidade +
-                  ultimaAvaliacao.criatividade +
-                  ultimaAvaliacao.observacao) /
-                  6).toFixed(2)
-              }</p>
-              <p>Comentário: {ultimaAvaliacao.comentario}</p>
-            </>
-          )}
+          
 
         </div>
 

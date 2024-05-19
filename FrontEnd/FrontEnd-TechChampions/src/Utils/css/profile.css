@@ -136,7 +136,7 @@ flex-shrink: 0;
 }
 #nome{
   display: inline-block;
-  width: 150px;
+  margin-bottom: 10px;
 height: 45px;
 flex-shrink: 0;
 text-align: center;

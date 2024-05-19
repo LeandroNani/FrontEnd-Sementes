@@ -23,21 +23,20 @@ const Login = () => {
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
   
+  
   const handleLogin = async () => {
     try {
-      console.log(`Email: ${email}, Password: ${password}`)
       const data = { email, password };
       const response = await axios.post('https://projeto-sementes.onrender.com/usuarios/login', JSON.stringify(data), {
         headers: {
           'Content-Type': 'application/json'
       }
     });
-    console.log(response.data);
       const { token, message } = response.data;
   
       if (token) {
-        setSuccess(true);
         localStorage.setItem('token', token);
+        localStorage.setItem('email', email);
         navigate('/profile');
         alert('Login feito com Sucesso!')
       } else {
@@ -50,7 +49,7 @@ const Login = () => {
   
   const handleRegister = async () => {
     try {
-      const data = { newNome, newEmail, newPassword, newCargo };
+      const data = { nome: newNome, email: newEmail, password: newPassword, cargo: newCargo };
       const response = await axios.post('https://projeto-sementes.onrender.com/usuarios/register', JSON.stringify(data), {
         headers: {
           'Content-Type': 'application/json'
