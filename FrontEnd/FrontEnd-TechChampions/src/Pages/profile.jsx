@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import logo from "../Utils/img/logo.png";
+import { useNavigate } from 'react-router-dom';
 import avatar from "../Utils/img/avatar.png";
-import configs from "../Utils/img/config.png";
 import ponto from "../Utils/img/ponto.png";
 import eSemente from "../Utils/img/eSemente.png";
 import avaliacoes from "../Utils/img/avaliacoes.png";
@@ -12,7 +11,7 @@ import Header from '../components/header';
 
 
 const Profile = () => {
-
+  const navigate = useNavigate();
   const userId = localStorage.getItem('userId');
   const [userData, setUserData] = React.useState(null);
   const [ultimaAvaliacao, setUltimaAvaliacao] = React.useState(null);
@@ -135,7 +134,7 @@ const Profile = () => {
                 </td>
                 <td className='textoCarreiras'>Estude com conteúdos filtrados para você</td>
               </tr>
-              <button type='button' className="btnCarreiras">
+              <button type='button' className="btnCarreiras" onClick={() => navigate('/carreiras')}>
                       Entrar em Carreiras
               </button>
             </tbody>

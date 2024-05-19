@@ -2,8 +2,11 @@ import React from 'react';
 import logo from "../Utils/img/logo.png";
 import avatar from "../Utils/img/avatar.png";
 import configs from "../Utils/img/config.png";
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
+  const navigate = useNavigate();
+
   return (
     <div id="header">
       <nav>
@@ -21,7 +24,7 @@ const Header = () => {
             </form>
           </li>
           <li>
-            <img id="avatar-navbar" src={avatar} alt="" />
+            <img id="avatar-navbar" onClick={() => navigate('/profile')} src={avatar} alt="" />
           </li>
           <li>
             <img id="configs" src={configs} alt="" />

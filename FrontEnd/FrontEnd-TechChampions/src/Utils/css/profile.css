@@ -105,6 +105,7 @@ nav{
   width: 66px;
 height: 63.8px;
 flex-shrink: 0;
+cursor: pointer;
 }
 #configs{
   width: 47px;

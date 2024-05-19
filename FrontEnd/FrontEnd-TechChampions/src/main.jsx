@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client"
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./Pages/login.jsx";
 import Profile from "./Pages/profile.jsx";
-
+import Carreiras from "./Pages/carreiras.jsx";
 
 
 
@@ -15,6 +15,10 @@ import Profile from "./Pages/profile.jsx";
     {
       path: "/profile",
       element: <Profile />,
+    },
+    {
+      path: "/carreiras",
+      element: <Carreiras />,
     },
   ]);
 
