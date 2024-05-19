@@ -9,32 +9,25 @@ import '../Utils/css/profile.css';
 import axios from 'axios';
 import Header from '../components/header';
 
-
 const Profile = () => {
   const navigate = useNavigate();
-  const userId = localStorage.getItem('userId');
+  const [token, setToken] = useState(localStorage.getItem('token') || '');
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
   const [userData, setUserData] = React.useState(null);
   const [ultimaAvaliacao, setUltimaAvaliacao] = React.useState(null);
   const [error, setError] = React.useState(null);
 
-  const fetchAvaliacoes = async () => {
-    try {
-      const response = await axios.get(`https://projeto-sementes.onrender.com/avaliacoes`);
-      const avaliacoes = response.data;
-      const ultimaAvaliacao = avaliacoes.find((avaliacao) => avaliacao.usuarioAvaliadoId === userId);
-      setUltimaAvaliacao(ultimaAvaliacao);
-    } catch (error) {
-      setError(error.message);
-    }
-  };
-
-  React.useEffect(() => {
-    if (userId) {
+  useEffect(() => {
+    if (token) {
       const fetchUserData = async () => {
         try {
-          const response = await axios.get(`https://projeto-sementes.onrender.com/usuarios`);
+          const response = await axios.get(`https://projeto-sementes.onrender.com/usuarios`, config);
           const users = response.data;
-          const user = users.find((user) => user.id === userId);
+          const user = users.find((user) => user.id === localStorage.getItem('userId'));
           if (user) {
             setUserData(user);
           }
@@ -42,22 +35,28 @@ const Profile = () => {
           setError(error.message);
         }
       };
+
+      const fetchAvaliacoes = async () => {
+        try {
+          const response = await axios.get(`https://projeto-sementes.onrender.com/avaliacoes`, config);
+          const avaliacoes = response.data;
+          const ultimaAvaliacao = avaliacoes.find((avaliacao) => avaliacao.usuarioAvaliadoId === localStorage.getItem('userId'));
+          setUltimaAvaliacao(ultimaAvaliacao);
+        } catch (error) {
+          setError(error.message);
+        }
+      };
+
       fetchUserData();
       fetchAvaliacoes();
     }
-  }, [userId, fetchAvaliacoes]);
-
-
-
+  }, [token]);
 
   return (
     <div id="limiter">
       <Header />
 
-
-
       <div className="painelPerfil">
-
         <div id="profile">
           <img id="avatar-painel" src={avatar} alt="" />
           <div id="perfil-infos">
@@ -71,7 +70,6 @@ const Profile = () => {
             )}
           </div>
         </div>
-
 
         <div id="infoProfile">
           <div id="tempoEmpresa">

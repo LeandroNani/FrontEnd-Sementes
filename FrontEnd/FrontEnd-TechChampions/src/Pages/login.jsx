@@ -11,7 +11,7 @@ import axios from 'axios';
 
 const Login = () => {
   const navigate = useNavigate();
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [newEmail, setnewEmail] = useState('');
   const [newNome, setnewNome] = useState('');
@@ -22,21 +22,26 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
-  const [user, setUser] = useState(null);
   
   const handleLogin = async () => {
     try {
-      const response = await axios.post('https://projeto-sementes.onrender.com/usuarios/login', { username, password });
-      const { success, user, message } = response.data;
+      console.log(`Email: ${email}, Password: ${password}`)
+      const data = { email, password };
+      const response = await axios.post('https://projeto-sementes.onrender.com/usuarios/login', JSON.stringify(data), {
+        headers: {
+          'Content-Type': 'application/json'
+      }
+    });
+    console.log(response.data);
+      const { token, message } = response.data;
   
-      if (success) {
+      if (token) {
         setSuccess(true);
-        setUser(user);
-        localStorage.setItem('userId', user.id);
+        localStorage.setItem('token', token);
         navigate('/profile');
         alert('Login feito com Sucesso!')
       } else {
-        setError(message || 'Nome ou senha incorretos');
+        setError(message || 'Email ou senha incorretos');
       }
     } catch (error) {
       setError(error.message);
@@ -46,7 +51,11 @@ const Login = () => {
   const handleRegister = async () => {
     try {
       const data = { newNome, newEmail, newPassword, newCargo };
-      const response = await axios.post('https://projeto-sementes.onrender.com/usuarios/register', data);
+      const response = await axios.post('https://projeto-sementes.onrender.com/usuarios/register', JSON.stringify(data), {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
       const { success, message } = response.data;
   
       if (success) {
@@ -92,11 +101,11 @@ const Login = () => {
                 </span>
 
                 <div className="wrap-input100 validate-input" >
-                  <label className="senhaEmail" htmlFor="">Nome Completo</label>
-                  <input className="input100" type="text" name="nome"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)} />
-                  <span className="focus-input100" data-placeholder="Nome Completo"></span>
+                  <label className="senhaEmail" htmlFor="">Email</label>
+                  <input className="input100" type="text" name="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)} />
+                  <span className="focus-input100" data-placeholder="Email"></span>
                 </div>
 
                 <div className="wrap-input100 validate-input" data-validate="Enter password">
