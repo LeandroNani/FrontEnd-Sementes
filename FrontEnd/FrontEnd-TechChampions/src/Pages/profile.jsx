@@ -13,7 +13,30 @@ const Profile = () => {
   const navigate = useNavigate();
   const email = localStorage.getItem('email');
 
+  const [userAvaliacaoCount, setUserAvaliacaoCount] = useState(0);
   const [userData, setUserData] = useState(null);
+  const [lastUserAvaliacao, setLastUserAvaliacao] = useState(null);
+
+  const getUserAvaliacoes = async (userId) => {
+    try {
+      const response = await axios.get(`https://projeto-sementes.onrender.com/avaliacoes`);
+      const avaliacoes = response.data;
+      return avaliacoes.filter((avaliacao) => avaliacao.usuarioAvaliadoId === userId);
+    } catch (error) {
+      console.error(error);
+      return [];
+    }
+  };
+
+  const getLastUserAvaliacao = async (userId) => {
+    try {
+      const avaliacoes = await getUserAvaliacoes(userId);
+      return avaliacoes.length > 0 ? avaliacoes[avaliacoes.length - 1] : null;
+    } catch (error) {
+      console.error(error);
+      return null;
+    }
+  };
 
   useEffect(() => {
     if (email) {
@@ -22,7 +45,10 @@ const Profile = () => {
           const response = await axios.get(`https://projeto-sementes.onrender.com/usuarios`);
           const users = response.data;
           const user = users.find((user) => user.email === email);
-          console.log(user);
+          const avaliacoes = await getUserAvaliacoes(user.id);
+          const lastAvaliacao = await getLastUserAvaliacao(user.id);
+          setLastUserAvaliacao(lastAvaliacao);
+          setUserAvaliacaoCount(avaliacoes.length);
           setUserData(user);
         } catch (error) {
           console.error(error);
@@ -61,7 +87,7 @@ const Profile = () => {
           <div id="tempoEmpresa">
             <img id="img-eSemente" src={avaliacoes} alt="" />
             <span id="eSement-Txt">AVALIAÇÕES</span>
-            <span id="eSemente-Txt2">87</span>
+            <span id="eSemente-Txt2">{userAvaliacaoCount}</span>
           </div>
         </div>
 
@@ -71,7 +97,42 @@ const Profile = () => {
           <div id="avaliacoesTitulo">
             <h2 id="avaliacoesRecebidas">AVALIAÇÕES RECEBIDAS</h2>
           </div>
-          
+          {lastUserAvaliacao && (
+            <div id="ultimaAvaliacao">
+              <table id="tabelaUltimaAvaliacao">
+                <tbody>
+                  <tr>
+                    <td>Comunicação:</td>
+                    <td>{lastUserAvaliacao.comunicacao}</td>
+                  </tr>
+                  <tr>
+                    <td>Proatividade:</td>
+                    <td>{lastUserAvaliacao.proatividade}</td>
+                  </tr>
+                  <tr>
+                    <td>Inteligência Emocional:</td>
+                    <td>{lastUserAvaliacao.inteligenciaEmocional}</td>
+                  </tr>
+                  <tr>
+                    <td>Flexibilidade:</td>
+                    <td>{lastUserAvaliacao.flexibilidade}</td>
+                  </tr>
+                  <tr>
+                    <td>Criatividade:</td>
+                    <td>{lastUserAvaliacao.criatividade}</td>
+                  </tr>
+                  <tr>
+                    <td>Observação:</td>
+                    <td>{lastUserAvaliacao.observacao}</td>
+                  </tr>
+                  <tr>
+                    <td>Comentário:</td>
+                    <td>{lastUserAvaliacao.comentario}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          )}
 
         </div>
 
@@ -100,7 +161,7 @@ const Profile = () => {
                 <td className='textoCarreiras'>Estude com conteúdos filtrados para você</td>
               </tr>
               <button type='button' className="btnCarreiras" onClick={() => navigate('/carreiras')}>
-                      Entrar em Carreiras
+                Entrar em Carreiras
               </button>
             </tbody>
           </table>
