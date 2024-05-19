@@ -11,7 +11,7 @@ import axios from 'axios';
 
 const Login = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [newEmail, setnewEmail] = useState('');
   const [newNome, setnewNome] = useState('');
@@ -26,7 +26,7 @@ const Login = () => {
   
   const handleLogin = async () => {
     try {
-      const response = await axios.post('https://projeto-sementes.onrender.com/usuarios/login', { email, password });
+      const response = await axios.post('https://projeto-sementes.onrender.com/usuarios/login', { username, password });
       const { success, user, message } = response.data;
   
       if (success) {
@@ -36,7 +36,7 @@ const Login = () => {
         navigate('/profile');
         alert('Login feito com Sucesso!')
       } else {
-        setError(message || 'Email ou senha incorretos');
+        setError(message || 'Nome ou senha incorretos');
       }
     } catch (error) {
       setError(error.message);
@@ -45,7 +45,8 @@ const Login = () => {
   
   const handleRegister = async () => {
     try {
-      const response = await axios.post('https://projeto-sementes.onrender.com/usuarios/register', { newNome, newCargo, newEmail, newPassword });
+      const data = { newNome, newEmail, newPassword, newCargo };
+      const response = await axios.post('https://projeto-sementes.onrender.com/usuarios/register', data);
       const { success, message } = response.data;
   
       if (success) {
@@ -58,23 +59,6 @@ const Login = () => {
       setError(error.message);
     }
   };
-
-  useEffect(() => {
-    if (success) {
-      axios.get('/api/user')
-        .then(response => {
-          if (response.data.success && response.data.user) {
-            setUser(response.data.user);
-            navigate('/profile');
-          } else {
-            setError(response.data.error);
-          }
-        })
-        .catch(error => {
-          setError(error.message);
-        });
-    }
-  }, [success, navigate]);
 
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
@@ -107,12 +91,12 @@ const Login = () => {
                   <p id="textoDescricao">Entre ou faça seu cadastro com a conta da empresa</p>
                 </span>
 
-                <div className="wrap-input100 validate-input" data-validate="Valid email is: a@b.c">
-                  <label className="senhaEmail" htmlFor="">E-mail</label>
-                  <input className="input100" type="text" name="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)} />
-                  <span className="focus-input100" data-placeholder="Email"></span>
+                <div className="wrap-input100 validate-input" >
+                  <label className="senhaEmail" htmlFor="">Nome Completo</label>
+                  <input className="input100" type="text" name="nome"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)} />
+                  <span className="focus-input100" data-placeholder="Nome Completo"></span>
                 </div>
 
                 <div className="wrap-input100 validate-input" data-validate="Enter password">
@@ -174,21 +158,21 @@ const Login = () => {
       >
         <div className="wrap-input100 validate-input">
           <label className="senhaEmail" htmlFor="">Insira Seu Nome Completo</label>
-          <input placeholder='Nome Completo' className="input100" type="text" name="nome"
+          <input placeholder='Nome Completo' className="input100" type="text" name="newNome"
             value={newNome}
             onChange={(e) => setnewNome(e.target.value)} />
           <span className="focus-input100"></span>
         </div>
         <div className="wrap-input100 validate-input">
           <label className="senhaEmail" htmlFor="">Insira seu Cargo</label>
-          <input placeholder='Insira seu Cargo' className="input100" type="text" name="cargo"
+          <input placeholder='Insira seu Cargo' className="input100" type="text" name="newCargo"
             value={newCargo}
             onChange={(e) => setnewCargo(e.target.value)} />
           <span className="focus-input100"></span>
         </div>
         <div className="wrap-input100 validate-input" data-validate="Valid email is: a@b.c">
           <label className="senhaEmail" htmlFor="">Cadastre seu E-mail</label>
-          <input placeholder='Insira seu e-mail' className="input100" type="text" name="email"
+          <input placeholder='Insira seu e-mail' className="input100" type="text" name="newEmail"
             value={newEmail}
             onChange={(e) => setnewEmail(e.target.value)} />
           <span className="focus-input100" data-placeholder="Email"></span>
@@ -199,7 +183,7 @@ const Login = () => {
             {showPassword ? "Esconder" : "Mostrar"}
           </span>
           <label className="senhaEmail" htmlFor="">Crie sua Senha</label>
-          <input placeholder='Insira sua Senha' className="input100" type={showPassword ? "text" : "password"} name="pass" value={newPassword}
+          <input placeholder='Insira sua Senha' className="input100" type={showPassword ? "text" : "password"} name="newPassword" value={newPassword}
             onChange={(e) => setnewPassword(e.target.value)} />
           <span className="focus-input100" data-placeholder="Password"></span>
         </div>

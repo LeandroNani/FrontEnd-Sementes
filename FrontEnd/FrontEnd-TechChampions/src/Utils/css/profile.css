@@ -305,7 +305,9 @@ line-height: 150%; /* 48px */
   line-height: 150%; /* 48px */ 
 }
 #tableCarreira{
-  display: block;
+  display: flex;
+  margin-top: 70px;
+  margin-left: 120px;
 }
 .textoCarreiras{
   color: #E6E6E6;
@@ -314,9 +316,39 @@ font-size: 22px;
 font-style: normal;
 font-weight: 400;
 line-height: 120%; /* 38.4px */
+
+display: flex;
+width: 456px;
+height: 80px;
+flex-direction: column;
+justify-content: center;
+flex-shrink: 0;
+
+height: 60px;
 }
 .carreiraIcon{
-  width: 49.956px;
-height: 52.889px;
+  width: 37,5px;
+height: 39px;
 flex-shrink: 0;
+margin-right: 20px;
+}
+tr{
+  height: 20px;
+}
+
+.btnCarreiras{
+  border-radius: 80px;
+  width: 329px;
+height: 72px;
+flex-shrink: 0;
+border: 3px solid #43C9E2;
+color: #43C9E2;
+text-align: center;
+font-family: Rubik;
+font-size: 24px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+margin-left: 80px;
+
 }
