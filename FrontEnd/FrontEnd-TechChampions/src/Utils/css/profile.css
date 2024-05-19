@@ -248,6 +248,7 @@ height: 400px;
 flex-shrink: 0;
 border-radius: 32px 0px 0px 0px;
 background: #6D0467;
+display: flex;
 }
 #avaliacoesTitulo{
   display: absolute;
@@ -260,7 +261,7 @@ background: #6D0467;
 background: #F47920;
 }
 #carreirasTituloContainer{
-  display: absolute;
+  position: absolute;
   margin-left: 165px;
   width: 400px;
   height: 60px;
@@ -302,4 +303,20 @@ line-height: 150%; /* 48px */
   font-style: normal;
   font-weight: 600;
   line-height: 150%; /* 48px */ 
+}
+#tableCarreira{
+  display: block;
+}
+.textoCarreiras{
+  color: #E6E6E6;
+font-family: Rubik;
+font-size: 22px;
+font-style: normal;
+font-weight: 400;
+line-height: 120%; /* 38.4px */
+}
+.carreiraIcon{
+  width: 49.956px;
+height: 52.889px;
+flex-shrink: 0;
 }

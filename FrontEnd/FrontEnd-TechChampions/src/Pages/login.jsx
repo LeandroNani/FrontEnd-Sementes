@@ -26,31 +26,33 @@ const Login = () => {
   
   const handleLogin = async () => {
     try {
-      const response = await axios.get('https://projeto-sementes.onrender.com/usuarios');
-      const users = response.data;
-      const foundUser = users.find((user) => user.email === email && user.senha === password);
-      if (foundUser) {
+      const response = await axios.post('https://projeto-sementes.onrender.com/usuarios/login', { email, password });
+      const { success, user, message } = response.data;
+  
+      if (success) {
         setSuccess(true);
-        setUser(foundUser);
-        localStorage.setItem('userId', foundUser.id);
+        setUser(user);
+        localStorage.setItem('userId', user.id);
         navigate('/profile');
         alert('Login feito com Sucesso!')
       } else {
-        setError('Email ou senha incorretos');
+        setError(message || 'Email ou senha incorretos');
       }
     } catch (error) {
       setError(error.message);
     }
   };
-
+  
   const handleRegister = async () => {
     try {
-      const response = await axios.post('https://projeto-sementes.onrender.com/usuarios', { newNome, newCargo, newEmail, newPassword });
-      if (response.data.success) {
+      const response = await axios.post('https://projeto-sementes.onrender.com/usuarios/register', { newNome, newCargo, newEmail, newPassword });
+      const { success, message } = response.data;
+  
+      if (success) {
         setSuccess(true);
         setIsOpen(false);
       } else {
-        setError(response.data.error);
+        setError(message || 'Erro ao cadastrar usuário');
       }
     } catch (error) {
       setError(error.message);
