@@ -119,19 +119,6 @@ const Login = () => {
                   <span className="focus-input100" data-placeholder="Password"></span>
                 </div>
 
-                <div className="checkbox-wrapper-29">
-                  <label htmlFor="keepConnected" className="checkbox">
-                    <input
-                      className="checkbox__input"
-                      type="checkbox"
-                      id="keepConnected"
-                      checked={keepConnected}
-                      onChange={(e) => setKeepConnected(e.target.checked)}
-                    />
-                    
-                  </label>
-                </div>
-
                 <div className="container-login100-form-btn">
                   <div className="wrap-login100-form-btn">
                     <div className="login100-form-bgbtn"></div>

@@ -47,19 +47,12 @@ flex-shrink: 0;
 }
 
 #logo {
-  width: 155px;
-height: 44px;
+  width: 93px;
+height: 26,4px;
 flex-shrink: 0;
 }
 
-.logoTitulo {
-  display: flex;
-  color: #000;
-  font-family: Poppins;
-  font-weight: 1000;
-  line-height: normal;
-  letter-spacing: 0.6px;
-}
+
 
 #fim {
   border: 0px;
@@ -101,7 +94,7 @@ flex-shrink: 0;
   width: 267px;
   color: #6D0467;
   font-family: Rubik;
-  font-size: 32px;
+  font-size: 26px;
   font-style: normal;
   font-weight: 1000;
   line-height: normal;
