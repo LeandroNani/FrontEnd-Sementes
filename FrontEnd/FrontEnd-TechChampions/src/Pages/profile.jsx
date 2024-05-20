@@ -150,7 +150,7 @@ const Profile = () => {
             <img className='skillIcon' src={comment} alt="Icon" />
           </td>
           <td className='skillTitle'>Comentário:</td>
-          <td className='skillResult' id='commentResult's >Ótima comunicação e proatividade, mas pode melhorar na flexibilidade e humor.</td> {/* Ajuste para exibir o comentário em uma coluna única */}
+          <td className='skillResult' id='commentResult' >{lastUserAvaliacao.comentario}</td>
         </tr>
       </tbody>
     </table>
