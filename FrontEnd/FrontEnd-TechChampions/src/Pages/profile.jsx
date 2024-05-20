@@ -4,6 +4,14 @@ import avatar from "../Utils/img/avatar.png";
 import ponto from "../Utils/img/ponto.png";
 import eSemente from "../Utils/img/eSemente.png";
 import avaliacoes from "../Utils/img/avaliacoes.png";
+import comunicacao from "../Utils/img/comunicacao.png";
+import proatividade from "../Utils/img/proatividade.png";
+import inteligenciaEmocional from "../Utils/img/inteligenciaEmocional.png";
+import flexibilidade from "../Utils/img/flexibilidade.png";
+import criatividade from "../Utils/img/criatividade.png";
+import observacao from "../Utils/img/observacao.png";
+import comment from "../Utils/img/comment.png";
+
 import fogueteCarreiras from "../Utils/img/fogueteCarreiras.png";
 import '../Utils/css/profile.css';
 import axios from 'axios';
@@ -102,32 +110,53 @@ const Profile = () => {
               <table id="tabelaUltimaAvaliacao">
                 <tbody>
                   <tr>
-                    <td>Comunicação:</td>
-                    <td>{lastUserAvaliacao.comunicacao}</td>
+                    <td className='skillTd'>
+                      <img className='skillIcon' src={comunicacao} alt="Icon" />
+                    </td>
+                    <td className='skillTitle'>Comunicação:</td>
+                    <td className='skillResult'>{lastUserAvaliacao.comunicacao}</td>
                   </tr>
                   <tr>
-                    <td>Proatividade:</td>
-                    <td>{lastUserAvaliacao.proatividade}</td>
+                    <td className='skillTd'>
+                      <img className='skillIcon' src={proatividade} alt="Icon" />
+                    </td>
+                    <td className='skillTitle'>Proatividade:</td>
+                    <td className='skillResult'>{lastUserAvaliacao.proatividade}</td>
                   </tr>
                   <tr>
-                    <td>Inteligência Emocional:</td>
-                    <td>{lastUserAvaliacao.inteligenciaEmocional}</td>
+                    <td className='skillTd'>
+                      <img className='skillIcon' src={inteligenciaEmocional} alt="Icon" />
+                    </td>
+                    <td className='skillTitle'>Inteligência Emocional:</td>
+                    <td className='skillResult'>{lastUserAvaliacao.inteligenciaEmocional}</td>
                   </tr>
                   <tr>
-                    <td>Flexibilidade:</td>
-                    <td>{lastUserAvaliacao.flexibilidade}</td>
+                    <td className='skillTd'>
+                      <img className='skillIcon' src={flexibilidade} alt="Icon" />
+                    </td>
+                    <td className='skillTitle'>Flexibilidade:</td>
+                    <td className='skillResult'>{lastUserAvaliacao.flexibilidade}</td>
                   </tr>
                   <tr>
-                    <td>Criatividade:</td>
-                    <td>{lastUserAvaliacao.criatividade}</td>
+                    <td className='skillTd'>
+                      <img className='skillIcon' src={criatividade} alt="Icon" />
+                    </td>
+                    <td className='skillTitle'>Criatividade:</td>
+                    <td className='skillResult'>{lastUserAvaliacao.criatividade}</td>
                   </tr>
                   <tr>
-                    <td>Observação:</td>
-                    <td>{lastUserAvaliacao.observacao}</td>
+                    <td className='skillTd'>
+                      <img className='skillIcon' src={observacao} alt="Icon" />
+                    </td>
+                    <td className='skillTitle'>Observação:</td>
+                    <td className='skillResult'>{lastUserAvaliacao.observacao}</td>
                   </tr>
                   <tr>
-                    <td>Comentário:</td>
-                    <td>{lastUserAvaliacao.comentario}</td>
+                  <td className='skillTd'>
+                      <img className='skillIcon' src={comment} alt="Icon" />
+                    </td>
+                    <td className='skillTitle'>Comentário:</td>
+                    <td className='skillResult'>{lastUserAvaliacao.comentario}</td>
                   </tr>
                 </tbody>
               </table>

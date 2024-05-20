@@ -127,8 +127,8 @@ margin-left: 41px;
 }
 #avatar-painel{
   display: inline-block;
-width: 180px;
-height: 173.999px;
+width: 130px;
+height: 130px;
 justify-content: center;
 align-items: center;
 flex-shrink: 0;
@@ -352,4 +352,43 @@ font-weight: 500;
 line-height: normal;
 margin-left: 80px;
 
+}
+#ultimaAvaliacao{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+.skillIcon{
+  width: 20px;
+height: 20px;
+flex-shrink: 0;
+color: #ffffff;
+}
+.skillTd{
+  display: inline;
+  width: auto;
+}
+.skillTitle{
+  margin: 20px;
+  display: inline;
+  width: 150px;
+
+  color: #6D0467;
+
+font-family: Rubik;
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 36px */
+}
+
+.skillResult{
+  color: #F47920;
+
+font-family: Rubik;
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 36px */
 }
