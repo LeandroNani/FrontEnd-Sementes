@@ -173,9 +173,8 @@ line-height: 150%; /* 36px */
 #infoProfile{
   margin: 0;
   display: flex;
-width: 299.2px;
-height: 187.2px;
-padding: 28.8px 48px;
+height: 157.2px;
+padding: 17.28px 28.8px;
 align-items: flex-start;
 gap: 36px;
 border-radius: 0px 0px 0px 48px;
