@@ -113,6 +113,7 @@ flex-shrink: 0;
 }
 .painelPerfil{
   display: flex;
+  justify-content: space-between;
 flex-shrink: 0;
 margin: 0;
 background: #E6E6E6;}
@@ -171,7 +172,6 @@ line-height: 150%; /* 36px */
 }
 #infoProfile{
   margin: 0;
-  margin-left: 633.8px;
   display: flex;
 width: 299.2px;
 height: 187.2px;
@@ -226,9 +226,16 @@ font-style: normal;
 font-weight: 700;
 line-height: 150%; /* 27px */
 }
+
+#Segunda-parte{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 90px;
+}
+
+
 #ultimasAvaliacoes{
-  position: absolute;
-  margin-top: 270.8px;
+  
   width: 655.2px;
 height:352px;
 flex-shrink: 0;
@@ -239,9 +246,7 @@ background: #E6E6E6;
 }
 
 #carreiras{
-  position: absolute;
-  margin-top: 270.8px;;
-  margin-left: 844px;
+  
   width: 655.2px;
   height:352px;
 flex-shrink: 0;

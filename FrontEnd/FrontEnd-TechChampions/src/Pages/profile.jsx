@@ -101,65 +101,69 @@ const Profile = () => {
 
 
 
-        <div id="ultimasAvaliacoes">
+
+      </div>
+      <div id="Segunda-parte">
+
+      <div id="ultimasAvaliacoes">
           <div id="avaliacoesTitulo">
             <h2 id="avaliacoesRecebidas">AVALIAÇÕES RECEBIDAS</h2>
           </div>
           {lastUserAvaliacao && (
-  <div id="ultimaAvaliacao">
-    <table id="tabelaUltimaAvaliacao">
-      <tbody>
-        <tr>
-          <td className='skillTd'>
-            <img className='skillIcon' src={comunicacao} alt="Icon" />
-          </td>
-          <td className='skillTitle'>Comunicação:</td>
-          <td className='skillResult'>{lastUserAvaliacao.comunicacao}</td>
-          <td className='skillTd'>
-            <img className='skillIcon' src={proatividade} alt="Icon" />
-          </td>
-          <td className='skillTitle'>Proatividade:</td>
-          <td className='skillResult'>{lastUserAvaliacao.proatividade}</td>
-        </tr>
-        <tr>
-          <td className='skillTd'>
-            <img className='skillIcon' src={inteligenciaEmocional} alt="Icon" />
-          </td>
-          <td className='skillTitle'>Inteligência Emocional:</td>
-          <td className='skillResult'>{lastUserAvaliacao.inteligenciaEmocional}</td>
-          <td className='skillTd'>
-            <img className='skillIcon' src={flexibilidade} alt="Icon" />
-          </td>
-          <td className='skillTitle'>Flexibilidade:</td>
-          <td className='skillResult'>{lastUserAvaliacao.flexibilidade}</td>
-        </tr>
-        <tr>
-          <td className='skillTd'>
-            <img className='skillIcon' src={criatividade} alt="Icon" />
-          </td>
-          <td className='skillTitle'>Criatividade:</td>
-          <td className='skillResult'>{lastUserAvaliacao.criatividade}</td>
-          <td className='skillTd'>
-            <img className='skillIcon' src={observacao} alt="Icon" />
-          </td>
-          <td className='skillTitle'>Observação:</td>
-          <td className='skillResult'>{lastUserAvaliacao.observacao}</td>
-        </tr>
-        <tr>
-          <td className='skillTd'>
-            <img className='skillIcon' src={comment} alt="Icon" />
-          </td>
-          <td className='skillTitle'>Comentário:</td>
-          <td className='skillResult' id='commentResult' >{lastUserAvaliacao.comentario}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-)}
+            <div id="ultimaAvaliacao">
+              <table id="tabelaUltimaAvaliacao">
+                <tbody>
+                  <tr>
+                    <td className='skillTd'>
+                      <img className='skillIcon' src={comunicacao} alt="Icon" />
+                    </td>
+                    <td className='skillTitle'>Comunicação:</td>
+                    <td className='skillResult'>{lastUserAvaliacao.comunicacao}</td>
+                    <td className='skillTd'>
+                      <img className='skillIcon' src={proatividade} alt="Icon" />
+                    </td>
+                    <td className='skillTitle'>Proatividade:</td>
+                    <td className='skillResult'>{lastUserAvaliacao.proatividade}</td>
+                  </tr>
+                  <tr>
+                    <td className='skillTd'>
+                      <img className='skillIcon' src={inteligenciaEmocional} alt="Icon" />
+                    </td>
+                    <td className='skillTitle'>Inteligência Emocional:</td>
+                    <td className='skillResult'>{lastUserAvaliacao.inteligenciaEmocional}</td>
+                    <td className='skillTd'>
+                      <img className='skillIcon' src={flexibilidade} alt="Icon" />
+                    </td>
+                    <td className='skillTitle'>Flexibilidade:</td>
+                    <td className='skillResult'>{lastUserAvaliacao.flexibilidade}</td>
+                  </tr>
+                  <tr>
+                    <td className='skillTd'>
+                      <img className='skillIcon' src={criatividade} alt="Icon" />
+                    </td>
+                    <td className='skillTitle'>Criatividade:</td>
+                    <td className='skillResult'>{lastUserAvaliacao.criatividade}</td>
+                    <td className='skillTd'>
+                      <img className='skillIcon' src={observacao} alt="Icon" />
+                    </td>
+                    <td className='skillTitle'>Observação:</td>
+                    <td className='skillResult'>{lastUserAvaliacao.observacao}</td>
+                  </tr>
+                  <tr>
+                    <td className='skillTd'>
+                      <img className='skillIcon' src={comment} alt="Icon" />
+                    </td>
+                    <td className='skillTitle'>Comentário:</td>
+                    <td className='skillResult' id='commentResult' >{lastUserAvaliacao.comentario}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          )}
 
         </div>
 
-        <div id="carreiras">
+      <div id="carreiras">
           <div id="carreirasTituloContainer">
             <h2 id="carreirasTitle">CARREIRAS</h2>
           </div>
@@ -190,7 +194,6 @@ const Profile = () => {
           </table>
 
         </div>
-
       </div>
     </div>
   );
