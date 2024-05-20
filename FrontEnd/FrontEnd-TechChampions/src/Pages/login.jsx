@@ -23,6 +23,8 @@ const Login = () => {
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
   
+  localStorage.setItem('token', null);
+  localStorage.setItem('email', null);
   
   const handleLogin = async () => {
     try {
@@ -34,7 +36,7 @@ const Login = () => {
     });
       const { token, message } = response.data;
   
-      if (token) {
+      if (email !=null && email.length > 0) {
         localStorage.setItem('token', token);
         localStorage.setItem('email', email);
         navigate('/profile');

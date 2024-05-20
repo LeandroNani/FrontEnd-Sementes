@@ -399,3 +399,33 @@ line-height: 150%; /* 36px */
   width: 200px;
   font-size: 15px;
 }
+#search-results{
+  position: absolute;
+  background-color: white;
+  width: 648px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 15px;
+  border: 3px solid #DFDFDF
+}
+
+.search-results {
+  height: 200px;
+  overflow-y:scroll;
+  scrollbar-width: 10px;
+  box-sizing:border-box;
+}
+
+.search-result-item {
+  padding: 5px;
+}
+.trSearch{
+  display: flex;
+  width: 400px;
+  align-items: center;
+  justify-content: space-around;
+}
+#pesquisar.search-term-long {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
