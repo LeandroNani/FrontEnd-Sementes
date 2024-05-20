@@ -253,8 +253,8 @@ background: #6D0467;
 display: flex;
 }
 #avaliacoesTitulo{
-  display: absolute;
-  margin-left: 115.2px;
+  margin-left:60.2px;
+  margin-right: 40px;
   width: 280px;
   height: 48px;
   flex-shrink: 0;
