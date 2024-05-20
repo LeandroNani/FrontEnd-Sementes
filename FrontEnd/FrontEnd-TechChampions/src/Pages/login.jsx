@@ -128,8 +128,7 @@ const Login = () => {
                       checked={keepConnected}
                       onChange={(e) => setKeepConnected(e.target.checked)}
                     />
-                    <span className="checkbox__label"></span>
-                    <p>Manter-se conectado</p>
+                    
                   </label>
                 </div>
 

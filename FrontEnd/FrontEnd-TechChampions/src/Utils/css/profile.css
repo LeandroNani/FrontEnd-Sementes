@@ -418,14 +418,32 @@ line-height: 150%; /* 36px */
 
 .search-result-item {
   padding: 5px;
+  margin: 5px;
+  margin-bottom: 20px;
 }
 .trSearch{
   display: flex;
-  width: 400px;
+  width: 580px;
   align-items: center;
   justify-content: space-around;
 }
 #pesquisar.search-term-long {
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
+}
+.tdSearch{
+  width: 140px;
+}
+.spanOrange{
+
+}
+.spanPurple{
+  margin-right: 5px;
+  color: #6D0467;
+
+font-family: Rubik;
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; 
 }

@@ -14,7 +14,7 @@ const Header = () => {
   const pesquisarDiv = document.getElementById('pesquisar');
 
   if (pesquisarDiv !== null) {
-    if (searchTerm.length > 2) {
+    if (searchTerm.length > 1) {
       pesquisarDiv.classList.add('search-term-long');
     } else {
       pesquisarDiv.classList.remove('search-term-long');
@@ -68,27 +68,27 @@ const Header = () => {
               </svg>
               <button id="button-buscar" type="submit">Buscar</button>
             </form>
-            {searchTerm.length > 2 && (
+            {searchTerm.length > 1 && (
               <div id="search-results" className="search-results">
+                <table>
                 {searchResults.map((user) => (
                   <div key={user.id} className="search-result-item">
-                    <table>
                       <tr className="trSearch">
-                        <td>
-                          <span>Nome:</span>
-                          <span>{user.nome}</span>
+                        <td className="tdSearch">
+                          <span className="spanPurple">Nome:</span>
+                          <span className="spanOrange">{user.nome}</span>
                         </td>
-                        <td>
-                          <span>Cargo:</span>
-                          <span>{user.cargo}</span>
+                        <td className="tdSearch">
+                          <span className="spanPurple">Cargo:</span>
+                          <span className="spanOrange">{user.cargo}</span>
                         </td>
-                        <td>
+                        <td className="tdSearch">
                           <button type='button'> Avaliar!</button>
                         </td>
                       </tr>
-                    </table>
                   </div>
                 ))}
+                </table>
               </div>
             )}
           </li>
