@@ -76,7 +76,7 @@ line-height: normal;
 }
 #icone-pesquisa {
   position: absolute;
-  left: 304px;
+  left: 324px;
   top: 32.8px;
   width: 25.6px;
   height: 25.6px;
@@ -408,6 +408,7 @@ line-height: 150%; /* 28.8px */
   position: absolute;
   background-color: white;
   width: 518.4px;
+  height: 250px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   padding: 12px;
