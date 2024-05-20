@@ -364,15 +364,13 @@ margin-left: 80px;
 height: 20px;
 flex-shrink: 0;
 color: #ffffff;
+margin: 10px;
 }
-.skillTd{
-  display: inline;
-  width: auto;
-}
+
 .skillTitle{
-  margin: 20px;
-  display: inline;
-  width: 150px;
+  margin-right: 20px;
+  display: inline-flexbox;
+  width: 100px;
 
   color: #6D0467;
 
@@ -385,10 +383,19 @@ line-height: 150%; /* 36px */
 
 .skillResult{
   color: #F47920;
+  margin: 10px;
+  justify-self: center;
 
+width: 100px;
 font-family: Rubik;
 font-size: 24px;
 font-style: normal;
+text-align: center;
 font-weight: 400;
 line-height: 150%; /* 36px */
+}
+
+#commentResult{
+  width: 200px;
+  font-size: 15px;
 }
