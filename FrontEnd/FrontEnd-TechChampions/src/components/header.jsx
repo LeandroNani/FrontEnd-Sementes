@@ -75,7 +75,6 @@ const Header = () => {
                   <div key={user.id} className="search-result-item">
                       <tr className="trSearch">
                         <td className="tdSearch">
-                          <span className="spanPurple">Nome:</span>
                           <span className="spanOrange">{user.nome}</span>
                         </td>
                         <td className="tdSearch">
@@ -83,7 +82,7 @@ const Header = () => {
                           <span className="spanOrange">{user.cargo}</span>
                         </td>
                         <td className="tdSearch">
-                          <button type='button'> Avaliar!</button>
+                          <button type='button' id='buttonAvaliar'> Avaliar!</button>
                         </td>
                       </tr>
                   </div>

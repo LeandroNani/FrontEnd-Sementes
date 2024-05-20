@@ -75,7 +75,7 @@ line-height: normal;
 }
 #icone-pesquisa {
   position: absolute;
-  left: 424px;
+  left: 384px;
   top: 32.8px;
   width: 25.6px;
   height: 25.6px;
@@ -437,18 +437,27 @@ line-height: 150%; /* 28.8px */
   border-bottom-right-radius: 0px;
 }
 .tdSearch{
-  width: 102px;
-}
-.spanOrange{
-
+  width: 200px;
 }
 .spanPurple{
   margin-right: 4px;
   color: #6D0467;
 
 font-family: Rubik;
-font-size: 12px;
+font-size: 18px;
 font-style: normal;
 font-weight: 400;
 line-height: 150%; 
+}
+#buttonAvaliar{
+  width: 80px;
+border-radius: 8px;
+background: #F47920;
+color: #FFF;
+text-align: center;
+font-family: Rubik;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+border: solid 2px #6D0467;
 }
