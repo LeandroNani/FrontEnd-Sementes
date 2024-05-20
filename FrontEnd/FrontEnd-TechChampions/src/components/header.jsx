@@ -53,6 +53,11 @@ const Header = () => {
     setSearchTerm(e.target.value);
   };
 
+  const handleAvaliarClick = (e) => {
+    const userId = e.currentTarget.dataset.userId;
+    localStorage.setItem('usuarioAvaliado', userId);
+    navigate('/avaliacao');
+  };
   return (
     <div id="header">
       <nav>
@@ -71,8 +76,8 @@ const Header = () => {
             {searchTerm.length > 1 && (
               <div id="search-results" className="search-results">
                 <table>
-                {searchResults.map((user) => (
-                  <div key={user.id} className="search-result-item">
+                  {searchResults.map((user) => (
+                    <div key={user.id} className="search-result-item">
                       <tr className="trSearch">
                         <td className="tdSearch">
                           <span className="spanOrange">{user.nome}</span>
@@ -82,11 +87,11 @@ const Header = () => {
                           <span className="spanOrange">{user.cargo}</span>
                         </td>
                         <td className="tdSearch">
-                          <button type='button' id='buttonAvaliar'> Avaliar!</button>
+                        <button type='button' id='buttonAvaliar' data-user-id={user.id} onClick={handleAvaliarClick}>Avaliar!</button>
                         </td>
                       </tr>
-                  </div>
-                ))}
+                    </div>
+                  ))}
                 </table>
               </div>
             )}

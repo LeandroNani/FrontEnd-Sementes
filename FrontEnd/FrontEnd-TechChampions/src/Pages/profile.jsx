@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import avatar from "../Utils/img/avatar.png";
-import ponto from "../Utils/img/ponto.png";
-import eSemente from "../Utils/img/eSemente.png";
-import avaliacoes from "../Utils/img/avaliacoes.png";
 import comunicacao from "../Utils/img/comunicacao.png";
 import proatividade from "../Utils/img/proatividade.png";
 import inteligenciaEmocional from "../Utils/img/inteligenciaEmocional.png";
@@ -14,8 +10,10 @@ import comment from "../Utils/img/comment.png";
 
 import fogueteCarreiras from "../Utils/img/fogueteCarreiras.png";
 import '../Utils/css/profile.css';
+import '../Utils/css/avaliacao.css';
 import axios from 'axios';
 import Header from '../components/header';
+import PerfilPainel from '../components/perfilPainel';
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -71,38 +69,7 @@ const Profile = () => {
     <div id="limiter">
       <Header />
 
-      <div className="painelPerfil">
-        <div id="profile">
-          <img id="avatar-painel" src={avatar} alt="" />
-          <div id="perfil-infos">
-            {userData && (
-              <>
-                <h2 id="nome">{userData.nome}</h2>
-                <br />
-                <img id="ponto" src={ponto} alt="" />
-                <span id="funcao">{userData.cargo}</span>
-              </>
-            )}
-          </div>
-        </div>
-
-        <div id="infoProfile">
-          <div id="tempoEmpresa">
-            <img id="img-eSemente" src={eSemente} alt="" />
-            <span id="eSement-Txt">É SEMENTE HÁ</span>
-            <span id="eSemente-Txt2">1 ANO</span>
-          </div>
-          <div id="tempoEmpresa">
-            <img id="img-eSemente" src={avaliacoes} alt="" />
-            <span id="eSement-Txt">AVALIAÇÕES</span>
-            <span id="eSemente-Txt2">{userAvaliacaoCount}</span>
-          </div>
-        </div>
-
-
-
-
-      </div>
+      <PerfilPainel userData={userData} userAvaliacaoCount={userAvaliacaoCount} />
       <div id="Segunda-parte">
 
       <div id="ultimasAvaliacoes">

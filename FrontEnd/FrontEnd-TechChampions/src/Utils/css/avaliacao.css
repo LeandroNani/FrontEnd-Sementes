@@ -1,0 +1,59 @@
+Fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+Fieldset legend {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0.5rem;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.wrap-input100.validate-input {
+  margin-bottom: 1rem;
+}
+
+.wrap-input100.validate-input label.label-radio {
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+.wrap-input100.validate-input inputinput100 {
+  height: 2rem;
+}
+
+.wrap-input100.validate-input textarea.input100 {
+  height: 10rem;
+}
+
+.container-login100-form-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.login100-form-btn {
+  width: 50%;
+  height: 3rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login100-form-btn:hover {
+  background-color: #45a049;
+}
+.wrap-login100{
+  width: auto;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}

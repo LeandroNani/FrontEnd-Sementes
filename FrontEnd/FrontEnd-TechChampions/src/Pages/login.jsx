@@ -17,7 +17,6 @@ const Login = () => {
   const [newNome, setnewNome] = useState('');
   const [newCargo, setnewCargo] = useState('');
   const [newPassword, setnewPassword] = useState('');
-  const [keepConnected, setKeepConnected] = useState(false);
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
