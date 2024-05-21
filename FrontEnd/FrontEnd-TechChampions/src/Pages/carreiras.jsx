@@ -96,15 +96,15 @@ const Carreiras = () => {
             </div>
             <div className='material'>
               <img className="iconesTrilha" src={artigo} alt="" />
-              <span>artigos</span>
+              <span>Artigos</span>
             </div>
             <div className='material'>
               <img className="iconesTrilha" src={podcast} alt="" />
-              <span>podcast</span>
+              <span>Podcast</span>
             </div>
             <div className='material'>
               <img className="iconesTrilha" src={livro} alt="" />
-              <span>livros</span>
+              <span>Livros</span>
             </div>
           </div>
         ))}
