@@ -1,3 +1,4 @@
+
 #header{
   margin:0;
   background: #6D0467;
@@ -35,6 +36,7 @@ li{
   width: 202.4px;
 height: 57.6288px;
 flex-shrink: 0;
+cursor: pointer;
 }
 #li-perfil{
   display: flex;
@@ -75,7 +77,7 @@ line-height: normal;
 }
 #icone-pesquisa {
   position: absolute;
-  left: 384px;
+  left: 484px;
   top: 32.8px;
   width: 25.6px;
   height: 25.6px;
@@ -231,7 +233,9 @@ line-height: 150%; /* 27px */
   justify-content: space-between;
   margin-top: 90px;
 }
-
+*, ::after, ::before{
+  box-sizing: unset;
+}
 
 #ultimasAvaliacoes{
   
@@ -405,8 +409,9 @@ line-height: 150%; /* 28.8px */
 }
 #search-results{
   position: absolute;
+  z-index: 10;
   background-color: white;
-  width: 518.4px;
+  width: 523.2px;
   height: 250px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;

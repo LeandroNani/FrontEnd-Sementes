@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Header from '../components/header';
 import '../Utils/css/minhasAvaliacoes.css';
+import minhasAvaliacoes from "../Utils/img/minhasAvaliacoes.png";
 
 const MinhasAvaliacoes = () => {
   const navigate = useNavigate();
@@ -47,6 +48,7 @@ const MinhasAvaliacoes = () => {
       <Header />
 
       <div id="avaliacoesRecebidasHeader" style={{ backgroundColor: '#FFA500', padding: '10px', textAlign: 'center' }}>
+      <img id="imgAvaliacoes" src={minhasAvaliacoes} alt=""></img>
         <h2 id='header2'>Avaliações Recebidas</h2>
       </div>
 
@@ -66,13 +68,13 @@ const MinhasAvaliacoes = () => {
           <tbody>
             {userAvaliacoes.map((avaliacao) => (
               <tr className='trMinhasAvaliacoes' key={avaliacao.id}>
-                <td>{avaliacao.comunicacao}</td>
-                <td>{avaliacao.proatividade}</td>
-                <td>{avaliacao.inteligenciaEmocional}</td>
-                <td>{avaliacao.flexibilidade}</td>
-                <td>{avaliacao.criatividade}</td>
-                <td>{avaliacao.observacao}</td>
-                <td id='tdComentario'>{avaliacao.comentario}</td>
+                <td className='tdAvaliacoesResult'>{avaliacao.comunicacao}</td>
+                <td className='tdAvaliacoesResult'>{avaliacao.proatividade}</td>
+                <td className='tdAvaliacoesResult'>{avaliacao.inteligenciaEmocional}</td>
+                <td className='tdAvaliacoesResult'>{avaliacao.flexibilidade}</td>
+                <td className='tdAvaliacoesResult'>{avaliacao.criatividade}</td>
+                <td className='tdAvaliacoesResult'>{avaliacao.observacao}</td>
+                <td className='tdAvaliacoesResult' id='tdComentario'>{avaliacao.comentario}</td>
               </tr>
             ))}
           </tbody>

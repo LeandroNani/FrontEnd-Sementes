@@ -51,6 +51,7 @@ const Profile = () => {
           const response = await axios.get(`https://projeto-sementes.onrender.com/usuarios`);
           const users = response.data;
           const user = users.find((user) => user.email === email);
+          localStorage.setItem('userId', user.id);
           const avaliacoes = await getUserAvaliacoes(user.id);
           const lastAvaliacao = await getLastUserAvaliacao(user.id);
           setLastUserAvaliacao(lastAvaliacao);

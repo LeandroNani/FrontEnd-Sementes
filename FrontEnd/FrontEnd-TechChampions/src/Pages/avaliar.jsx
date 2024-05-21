@@ -122,7 +122,7 @@ const Avaliar = () => {
                 {Object.entries(labels).map(([value, labelText]) => (
                   <React.Fragment key={value}>
                     <input
-                      className="input100"
+                      className="inputAvaliacao"
                       type="radio"
                       name="flexibilidade"
                       id={`flexibilidade${value}`}
@@ -144,7 +144,7 @@ const Avaliar = () => {
                 {Object.entries(labels).map(([value, labelText]) => (
                   <React.Fragment key={value}>
                     <input
-                      className="input100"
+                      className="inputAvaliacao"
                       type="radio"
                       name="proatividade"
                       id={`proatividade${value}`}
@@ -166,7 +166,7 @@ const Avaliar = () => {
                 {Object.entries(labels).map(([value, labelText]) => (
                   <React.Fragment key={value}>
                     <input
-                      className="input100"
+                      className="inputAvaliacao"
                       type="radio"
                       name="inteligenciaEmocional"
                       id={`inteligenciaEmocional${value}`}
@@ -188,7 +188,7 @@ const Avaliar = () => {
                 {Object.entries(labels).map(([value, labelText]) => (
                   <React.Fragment key={value}>
                     <input
-                      className="input100"
+                      className="inputAvaliacao"
                       type="radio"
                       name="criatividade"
                       id={`criatividade${value}`}
@@ -210,7 +210,7 @@ const Avaliar = () => {
                 {Object.entries(labels).map(([value, labelText]) => (
                   <React.Fragment key={value}>
                     <input
-                      className="input100"
+                      className="inputAvaliacao"
                       type="radio"
                       name="comunicacao"
                       id={`comunicacao${value}`}
@@ -231,7 +231,7 @@ const Avaliar = () => {
                 {Object.entries(labels).map(([value, labelText]) => (
                   <React.Fragment key={value}>
                     <input
-                      className="input100"
+                      className="inputAvaliacao"
                       type="radio"
                       name="observacao"
                       id={`observacao${value}`}

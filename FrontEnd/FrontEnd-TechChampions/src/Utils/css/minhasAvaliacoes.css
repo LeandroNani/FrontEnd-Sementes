@@ -1,6 +1,7 @@
 #tabelaAvaliacoesContainer {
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 20px;
   margin:20px;
   border-radius: 25px;
@@ -11,6 +12,7 @@ height: auto;
 }
 #header2{
   color: #E6E6E6;
+  display: inline;
 text-align: center;
 font-family: Rubik;
 font-size: 24px;
@@ -19,10 +21,14 @@ font-weight: 600;
 line-height: 150%; /* 36px */
 }
 .sticky-headers {
-  color: #8E44AD;
-  position: sticky;
+  color: #6D0467;
+font-family: Rubik;
+font-size: 24px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+text-transform: capitalize;
   top: 0;
-  z-index: 1;
 }
 th{
   text-align: center;
@@ -30,12 +36,27 @@ th{
 .trMinhasAvaliacoes{
   margin: 30px;
   border-bottom: 2px solid #575558;
+}
 
-  
+.tdAvaliacoesResult{
+
+  color: #000;
+font-family: Rubik;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 48px */
 }
 #tdComentario{
   width: 160px;
 }
 #table{
   width:1200px;
+}
+#imgAvaliacoes{
+  width: 25px;
+height: 25px;
+flex-shrink: 0;
+vertical-align:baseline;
+margin-right: 5px;
 }
