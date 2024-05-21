@@ -13,22 +13,6 @@ Fieldset legend {
   margin-bottom: 1rem;
 }
 
-.wrap-input100.validate-input {
-  margin-bottom: 1rem;
-}
-
-.wrap-input100.validate-input label.label-radio {
-  font-size: 1rem;
-  margin-right: 0.5rem;
-}
-
-.wrap-input100.validate-input inputinput100 {
-  height: 2rem;
-}
-
-.wrap-input100.validate-input textarea.input100 {
-  height: 10rem;
-}
 
 .container-login100-form-btn {
   display: flex;
@@ -36,7 +20,7 @@ Fieldset legend {
   margin-top: 2rem;
 }
 
-.login100-form-btn {
+.avaliacao-form-btn {
   width: 50%;
   height: 3rem;
   background-color: #4CAF50;
@@ -46,9 +30,7 @@ Fieldset legend {
   cursor: pointer;
 }
 
-.login100-form-btn:hover {
-  background-color: #45a049;
-}
+
 .wrap-login100{
   width: auto;
 }
@@ -56,4 +38,31 @@ Fieldset legend {
 .flex-container {
   display: flex;
   justify-content: space-between;
+  margin-top: 5px;
+}
+
+
+.container-avaliacao{
+  min-height: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.wrap-avaliacao{
+  border-radius: 16px;
+    background: #E6E6E6;
+    overflow: hidden;
+    padding: 28.2px 33px 19.8px 33px;
+  box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+}
+.avaliacao-form{
+  width: 100%;
 }

@@ -72,7 +72,7 @@ const Profile = () => {
       <PerfilPainel userData={userData} userAvaliacaoCount={userAvaliacaoCount} />
       <div id="Segunda-parte">
 
-      <div id="ultimasAvaliacoes">
+        <div id="ultimasAvaliacoes">
           <div id="avaliacoesTitulo">
             <h2 id="avaliacoesRecebidas">AVALIAÇÕES RECEBIDAS</h2>
           </div>
@@ -127,10 +127,10 @@ const Profile = () => {
               </table>
             </div>
           )}
-
+          <button id='btnAvaliacoes' onClick={() => navigate('/minhasAvaliacoes')}>Todas avaliações Recebidas</button>
         </div>
 
-      <div id="carreiras">
+        <div id="carreiras">
           <div id="carreirasTituloContainer">
             <h2 id="carreirasTitle">CARREIRAS</h2>
           </div>

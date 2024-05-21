@@ -4,8 +4,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./Pages/login.jsx";
 import Profile from "./Pages/profile.jsx";
 import Carreiras from "./Pages/carreiras.jsx";
-import Avaliacao from "./Pages/avaliacao.jsx";
-
+import Avaliar from "./Pages/avaliar.jsx";
+import MinhasAvaliacoes from "./Pages/minhasAvaliacoes.jsx";
 
   const router = createBrowserRouter([
     {
@@ -19,10 +19,15 @@ import Avaliacao from "./Pages/avaliacao.jsx";
     {
       path: "/carreiras",
       element: <Carreiras />,
-    },{
-      path: "/avaliacao",
-      element: <Avaliacao />,
     },
+    {
+      path: "/avaliar",
+      element: <Avaliar />,
+    },
+    {
+      path: "/minhasavaliacoes",
+      element: <MinhasAvaliacoes />,
+    }
   ]);
 
   ReactDOM.createRoot(document.getElementById("root")).render(

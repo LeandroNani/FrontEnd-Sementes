@@ -56,7 +56,7 @@ const Header = () => {
   const handleAvaliarClick = (e) => {
     const userId = e.currentTarget.dataset.userId;
     localStorage.setItem('usuarioAvaliado', userId);
-    navigate('/avaliacao');
+    navigate('/avaliar');
   };
   return (
     <div id="header">

@@ -5,7 +5,7 @@ import axios from "axios";
 import Header from '../components/header';
 import PerfilPainel from '../components/perfilPainel';
 
-const Avaliacoes = () => {
+const Avaliar = () => {
   const navigate = useNavigate();
   const usuarioAvaliado = localStorage.getItem('usuarioAvaliado');
 
@@ -113,8 +113,8 @@ const Avaliacoes = () => {
       <PerfilPainel userData={userData} userAvaliacaoCount={userAvaliacaoCount} />
 
       <div className="container-login100">
-        <div className="wrap-login100">
-          <form className="login100-form validate-form">
+        <div className="wrap-avaliacao">
+          <form className="avaliacao-form validate-form">
             <fieldset>
               <legend>Avaliação de Flexibilidade</legend>
               <p>Quão flexível você considera que o integrante seja quando se trata de lidar com mudanças e imprevistos?</p>
@@ -252,7 +252,7 @@ const Avaliacoes = () => {
             </div>
 
             <div className="container-login100-form-btn">
-              <button type='button' className="login100-form-btn" onClick={handleSubmit}>Enviar Avaliação</button>
+              <button type='button' className="avaliacao-form-btn" onClick={handleSubmit}>Enviar Avaliação</button>
             </div>
           </form>
         </div>
@@ -261,4 +261,4 @@ const Avaliacoes = () => {
   );
 };
 
-export default Avaliacoes;
+export default Avaliar;

@@ -461,3 +461,20 @@ font-weight: 600;
 line-height: normal;
 border: solid 2px #6D0467;
 }
+#btnAvaliacoes{
+  margin-bottom: 30px;
+  border-radius: 64px;
+  width: 246.4px;
+  height: 57.6px;
+  flex-shrink: 00;
+  border: 2.4px solid #F47920;
+  color: #F47920;
+  text-align: center;
+  font-family: Rubik;
+  font-size: 19.2px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-left: 100px;
+  margin-top: 15px;
+}
